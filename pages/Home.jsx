@@ -6,7 +6,6 @@ import axios from "axios";
 function Home() {
   const [data, setData] = useState([]);
   const [current, setCurrent] = useState(1);
-  const page = 10;
 
   function handlePaginate(event, position) {
     setCurrent(position);
@@ -15,7 +14,7 @@ function Home() {
   useEffect(() => {
     axios
       .get(
-        `https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=gecko_desc&per_page=${page}&page=${current}&sparkline=false&price_change_percentage=24h`
+        `https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=gecko_desc&per_page=10&page=${current}&sparkline=false&price_change_percentage=24h`
       )
       .then((response) => {
         if (response.status === 200) {
