@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@theme {
+  --color-input: rgba(255, 255, 255, 0.7);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background-color: #14161a;
+}
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+img {
+  display: flex;
+}
+.swiper-wrapper {
+  max-width: 1232px;
+  margin: 0 auto;
+  text-align: center;
+}
