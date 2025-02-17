@@ -4,7 +4,6 @@ import Details from "../pages/Details";
 import Mainlayout from "../layout/Mainlayout";
 
 function App() {
- 
   return (
     <div>
       <Routes>

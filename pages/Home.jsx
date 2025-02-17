@@ -2,11 +2,12 @@ import Carusel from "../components/Carusel";
 import { useEffect, useState } from "react";
 import Pagination from "@mui/material/Pagination";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const [data, setData] = useState([]);
   const [current, setCurrent] = useState(1);
-
+  const navigate = useNavigate();
   function handlePaginate(event, position) {
     setCurrent(position);
   }
@@ -26,6 +27,11 @@ function Home() {
         console.log(error);
       });
   }, [current]);
+
+  function handleRedirect(id) {
+    navigate(`/${id}`);
+    console.log(id);
+  }
 
   return (
     <>
@@ -61,7 +67,10 @@ function Home() {
               data.map((crypto, index) => (
                 <div
                   key={index}
-                  className="border-b border-[rgb(81,81,81)] flex items-center justify-between pt-4 pl-4 pb-7 pr-[15px]"
+                  onClick={() => {
+                    handleRedirect(crypto.id);
+                  }}
+                  className="cursor-pointer border-b border-[rgb(81,81,81)] flex items-center justify-between pt-4 pl-4 pb-7 pr-[15px]"
                 >
                   <div className="flex items-center gap-[15px]">
                     <img

@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <div className="py-3 bg-[#14161A]">
+    <header className="py-3 bg-[#14161A]">
       <div className="container flex items-center justify-between">
-        <Link>
+        <Link to="/">
           <img src="../images/site-logo.svg" alt="" width={168} height={24} />
         </Link>
         <div className="flex items-center gap-[20px] ">
@@ -22,7 +22,7 @@ function Header() {
           </button>
         </div>
       </div>
-    </div>
+    </header>
   );
 }
 export default Header;
